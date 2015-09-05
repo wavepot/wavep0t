@@ -1,0 +1,46 @@
+
+<div id="fundlist-heading">
+  <h1><span class="icon-smiley"></span>help fund development!<span class="icon-smiley"></span></h1>
+
+  <p>this project needs <strong>your support</strong> to keep going!</p>
+
+  <p>browse the features campaign list below and pledge on those you'd like to see implemented using bitcoin or dogecoin.</p>
+
+  <p>campaigns that succeed and reach their target shall have the feature implemented shortly after!</p>
+
+  <p>in case a campaign doesn't reach its target after a reasonable amount of time, it shall be discontinued and you'll be notified from this site and the <a href="mailing-list">mailing list</a> so that any of you who participated can choose to pledge on something else or get your coins back. you'll also get all your coins back if I don't hear from you.</p>
+</div>
+
+<div id="fundlist-campaigns">
+  <ul>
+
+  <% campaigns.forEach(function(c){ %>
+    <li>
+      <h2><%= c.name %></h2>
+      <div class="controls">
+        <div class="pledge"><span title="pledge with bitcoin!" class="coin bitcoin"></span><span title="wow! such pledge!" class="coin dogecoin"></span></div>
+        <div class="more"><a href="#">more info</a></div>
+      </div>
+      <div class="pledged-percentage"><%= Math.floor(c.percentage) %>%</div>
+      <div class="bar"><div class="bar-percentage" style="width: <%= Math.min(100, c.percentage) %>%"></div></div>
+      <div class="pledger bitcoin-pledger hide">
+        <img class="qrcode" src="<%= c.wallets.btc.qrcode %>">
+        <p>
+          <h3><strong><%= c.wallets.btc.pledged %><span class="coin-sign bitcoin-sign"></span></strong> pledged<br>out of <strong><%= c.wallets.btc.target %><span class="coin-sign bitcoin-sign"></span></strong></h3>
+          <input readonly onclick="this.select()" value="<%= c.wallets.btc.address %>">
+          <a href="<%= c.wallets.btc.uri %>">direct payment link</a>
+        </p>
+      </div>
+      <div class="pledger dogecoin-pledger hide">
+        <img class="qrcode" src="<%= c.wallets.doge.qrcode %>">
+        <p>
+          <h3><strong><%= c.wallets.doge.pledged %><span class="coin-sign dogecoin-sign"></span></strong> pledged<br>out of <strong><%= c.wallets.doge.target %><span class="coin-sign dogecoin-sign"></span></strong></h3>
+          <input readonly onclick="this.select()" value="<%= c.wallets.doge.address %>">
+          <a href="<%= c.wallets.doge.uri %>">direct payment link</a>
+        </p>
+      </div>
+      <p class="details hide"><%= c.details %></p>
+  <% }) %>
+
+  </ul>
+</div>

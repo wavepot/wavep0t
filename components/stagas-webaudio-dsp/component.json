@@ -1,0 +1,20 @@
+{
+  "name": "webaudio-dsp",
+  "version": "0.0.1",
+  "description": "webaudio dsp container",
+  "keywords": [
+    "webaudio"
+  ],
+  "author": "stagas",
+  "license": "MIT",
+  "dependencies": {
+    "component/emitter": "*",
+    "stagas/audio-process": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js",
+    "test/stagas-unexpected_token.js"
+  ],
+  "repo": "http://localhost:6060/stagas/webaudio-dsp"
+}

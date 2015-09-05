@@ -1,0 +1,21 @@
+{
+  "name": "css-emitter",
+  "repo": "anthonyshort/css-emitter",
+  "description": "fire events on css transition and animation completion",
+  "version": "0.1.1",
+  "keywords": [
+    "css",
+    "emitter",
+    "events",
+    "transition",
+    "animation"
+  ],
+  "dependencies": {
+    "component/emitter": "*",
+    "component/event": "*"
+  },
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}

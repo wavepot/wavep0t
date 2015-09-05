@@ -1,0 +1,41 @@
+.antiscroll-wrap {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.antiscroll-scrollbar {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  box-shadow: 0 0 1px #fff;
+  position: absolute;
+  opacity: 0;
+  transition: linear 300ms opacity;
+}
+
+.antiscroll-scrollbar-shown {
+  opacity: 1;
+}
+
+.antiscroll-scrollbar-horizontal {
+  height: 7px;
+  margin-left: 2px;
+  bottom: 2px;
+  left: 0;
+}
+
+.antiscroll-scrollbar-vertical {
+  width: 7px;
+  margin-top: 2px;
+  right: 2px;
+  top: 0;
+}
+
+.antiscroll-inner {
+  overflow: scroll;
+}
+
+.antiscroll-inner::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}

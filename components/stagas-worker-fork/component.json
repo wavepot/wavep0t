@@ -1,0 +1,16 @@
+{
+  "name": "worker-fork",
+  "repo": "stagas/worker-fork",
+  "description": "fork build in worker",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/emitter": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}

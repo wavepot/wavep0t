@@ -1,0 +1,82 @@
+.scrollbar-area {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.scrollbar-wrapper {
+  overflow: hidden;
+  height: 100%;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollbar-track {
+  display: none;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  width: 10px;
+  border-radius: 5px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+  .scrollbar-track.scrollbar-hover,
+  .scrollbar-dragging .scrollbar-track {
+    background-color: #D8D8D8;
+    background-color: rgba(0, 0, 0, .15);
+  }
+
+.scrollbar-handle {
+  position: absolute;
+  right: 0;
+  box-sizing: border-box;
+  width: 7px;
+  min-height: 10px;
+  background-color: #999;
+  background-color: rgba(0, 0, 0, .4);
+  border-radius: 5px;
+  cursor: default;
+
+  opacity: 0;
+  filter: alpha(opacity=0);
+
+  -webkit-transition: opacity .5s, width .25s;
+  -moz-transition: opacity .5s, width .25s;
+  -o-transition: opacity .5s, width .25s;
+  transition: opacity .5s, width .25s;
+
+  /* hardware accelerate */
+  -webkit-transform : translateZ(0);
+  -moz-transform : translateZ(0);
+  -ms-transform : translateZ(0);
+  -o-transform : translateZ(0);
+  transform : translateZ(0);
+}
+  .scrollbar-area.scrollbar-hover .scrollbar-handle,
+  .scrollbar-dragging .scrollbar-handle {
+    opacity: 1;
+    filter: alpha(opacity=100);
+
+    -webkit-transition: opacity 0s, width .25s;
+    -moz-transition: opacity 0s, width .25s;
+    -o-transition: opacity 0s, width .25s;
+    transition: opacity 0s, width .25s;
+  }
+  .scrollbar-track.scrollbar-hover .scrollbar-handle,
+  .scrollbar-dragging .scrollbar-handle {
+    width: 10px;
+  }
+
+.scrollbar-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}

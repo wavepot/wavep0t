@@ -1,0 +1,19 @@
+{
+  "name": "qr-code",
+  "repo": "matthewmueller/qr-code",
+  "description": "generate qr codes",
+  "version": "0.0.1",
+  "keywords": [
+    "qr",
+    "code",
+    "encode"
+  ],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "qr-code.js"
+  ]
+}

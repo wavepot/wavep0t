@@ -1,0 +1,11 @@
+{
+  "name": "scrollbar.js",
+  "main": "scrollbar.js",
+  "scripts": [
+    "scrollbar.js"
+  ],
+  "styles": [
+    "scrollbar.css"
+  ],
+  "repo": "http://localhost:6060/stagas/scrollbar.js"
+}

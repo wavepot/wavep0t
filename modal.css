@@ -1,0 +1,30 @@
+
+/* modal */
+
+.modal {
+  position: relative;
+  margin: 40px;
+  font-family: 'Spinnaker';
+}
+
+.modal h2 {
+  margin: 0;
+  width: 100%;
+  display: inline-block;
+  color: #AB7FFB;
+  font-weight: normal;
+  font-size: 25pt;
+  line-height: 0.65em;
+}
+
+.modal p {
+  margin: 35px 0;
+  color: #b6b4b2;
+  font-size: 13pt;
+//  text-align: justify;
+  line-height: 1.6em;
+}
+
+.modal p.small {
+  font-size: 11pt;
+}

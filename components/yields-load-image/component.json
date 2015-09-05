@@ -1,0 +1,13 @@
+{
+  "name": "load-image",
+  "repo": "yields/load-image",
+  "description": "Creates and loads an image.",
+  "version": "1.0.0",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}

@@ -1,0 +1,128 @@
+
+/* toolbar */
+
+#toolbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: #2F3129;
+  border-bottom: 1px solid #202020;
+}
+
+#toolbar,
+#toolbar * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#toolbar #logo {
+  float: left;
+  width: 60px;
+  height: 50px;
+  /*border-right: 1px solid #272727;
+  border-bottom: 1px solid #272727;*/
+  text-align: center;
+}
+
+#toolbar #xgui_container {
+  float: left;
+  border-right: 1px solid #272727;
+}
+
+#toolbar .button {
+  float: left;
+  color: #676453; //#59584E; //#5F6159; //#65D5EA; //#E58A20;
+  width: 60px;
+  height: 50px;
+  font-size: 24px;
+  line-height: 48px;
+  /*text-shadow:
+    0px -2px 0px #272727
+  ;*/
+  text-align: center;
+  //border-right: 1px solid #272727;
+  transition: all 0.11s;
+}
+
+#toolbar .right {
+  float: right;
+  border-right: none;
+  //border-left: 1px solid #272727;
+}
+
+#toolbar .button:hover {
+  color: #A0D92E; //#65D5EA;
+}
+
+#toolbar #record:hover {
+  color: #DF2266;
+}
+
+#toolbar #save:hover {
+  color: #FD971F;
+}
+
+#toolbar #menu:hover {
+  color: #AB7FFB
+}
+
+#toolbar #menu:before {
+  font-size: 20px;
+  line-height: 46px;
+}
+
+#toolbar #menu {
+  line-height: 46px;
+}
+
+#toolbar #logo svg {
+  margin-left: 2px;
+}
+
+#toolbar #logo:hover {
+  cursor: pointer;
+}
+
+#toolbar #info:hover {
+  color: #61CCE0;
+}
+
+#toolbar #pause:hover {
+  color: #A0D92E;
+}
+
+#toolbar #stop:hover {
+  color: #FD971F;
+}
+
+#toolbar .button {
+  cursor: pointer;
+}
+
+#toolbar .button.hide {
+  display: none;
+}
+
+#toolbar #play:before {
+  padding-left: 4px;
+}
+
+#toolbar #pause:before {
+  padding-right: 0px;
+}
+
+#toolbar .oscilloscope {
+  position: relative;
+  height: 50px;
+  background: #2F3129 !important;
+  //border-left: 1px solid #272727;
+}
+
+#toolbar .oscilloscope polyline {
+  stroke: #A0D92E !important;
+}

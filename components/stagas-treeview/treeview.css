@@ -1,0 +1,80 @@
+
+ul.treeview * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ul.treeview {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 .45em;
+}
+
+ul.treeview.top {
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  min-width: 100%;
+  padding: 5px 15px;
+  border: 1px solid black;
+}
+
+ul.treeview li ul.treeview {
+  display: none;
+}
+
+ul.treeview li.open > ul.treeview {
+  display: block;
+}
+
+ul.treeview li {
+  padding: 0 0 0 .45em;
+  white-space: nowrap;
+}
+
+ul.treeview li.selected:before {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1.2em;
+  background: rgba(0,0,0,.05);
+}
+
+ul.treeview li .label {
+  cursor: default;
+  position: relative;
+  padding-left: 1000px;
+  margin-left: -1000px;
+}
+
+ul.treeview li.branch > .label:before {
+  z-index: 0;
+  margin-left: 993px;
+  left: -.35em;
+  top: -.21em;
+  content: '▸';
+  position: absolute;
+  font-size: 1.98em;
+  line-height: 1em;
+}
+
+@-moz-document url-prefix() {
+  ul.treeview li.branch > .label:before {
+    left: -.5em;
+    top: -.16em;
+    font-size: 1.9em;
+  }
+}
+
+ul.treeview li.branch > .label:hover:before {
+  opacity: .3;
+}
+
+ul.treeview li.branch.open > .label:before {
+  content: '▾';
+}

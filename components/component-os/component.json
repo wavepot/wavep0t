@@ -1,0 +1,13 @@
+{
+  "name": "os",
+  "repo": "component/os",
+  "description": "Return the operating system name",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}

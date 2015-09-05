@@ -1,0 +1,224 @@
+
+/* fundlist */
+
+#fundlist {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  width: 500px;
+  height: 100%;
+  background: #2F3129;
+  text-align: center;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  color: #8E8F88;
+  font-size: 9pt;
+}
+
+#fundlist .icon-smiley {
+  margin-right: 20px;
+  margin-left: 15px;
+  font-size: 14pt;
+}
+
+#fundlist hr {
+  color: #272727;
+}
+
+#fundlist h1 {
+  margin: 0px;
+  padding: 5px 0 10px;
+  color: #DF2266;
+}
+
+#fundlist h2 {
+  display: inline-block;
+  margin: 6px 0;
+  color: #AB7FFB; //#61CCE0;
+  font-weight: normal;
+  font-size: 15pt;
+}
+
+#fundlist strong {
+  color: #A0D92E;
+}
+
+#fundlist-heading strong {
+  border-bottom: 1px solid #A0D92E;
+}
+
+#fundlist-campaigns {
+  margin-top: 20px;
+  border-top: 1px solid #272727;
+  text-align: left;
+}
+
+#fundlist-campaigns ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#fundlist-campaigns ul li {
+  position: relative;
+  padding: 15px 0 10px;
+}
+
+#fundlist-campaigns .controls {
+  display: inline-block;
+  opacity: 0;
+}
+
+#fundlist-campaigns ul li:hover .controls {
+  opacity: 1;
+}
+
+#fundlist-campaigns .controls .more {
+  display: inline-block;
+  position: relative;
+  top: -3px;
+}
+
+#fundlist-campaigns .controls .pledge {
+  display: inline-block;
+  position: relative;
+  top: 4px;
+}
+
+#fundlist-campaigns .bar {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: #59584E;
+}
+
+#fundlist-campaigns .bar-percentage {
+  position: absolute;
+  height: 100%;
+  background: #A0D92E;
+}
+
+#fundlist-campaigns .pledged-percentage {
+  position: absolute;
+  right: 0;
+  top: 56px;
+  z-index: 10;
+  font-size: 9pt;
+  color: #61CCE0;
+}
+
+#fundlist-campaigns .details {
+  overflow: hidden;
+  margin: 5px 0;
+  width: 80%;
+  height: auto;
+  max-height: 100px;
+  transition: all 0.4s ease-in;
+}
+
+#fundlist-campaigns .details.hide {
+  max-height: 0;
+  transition: all 0.4s ease-out;
+}
+
+#fundlist-campaigns .pledger {
+  overflow: hidden;
+  height: auto;
+  max-height: 170px;
+  transition: all 0.4s ease-in;
+}
+
+#fundlist-campaigns .pledger.hide {
+  max-height: 0;
+  transition: all 0.4s ease-out;
+}
+
+.coin {
+  display: inline-block;
+  overflow: hidden;
+  margin: 0 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: #FD971F;
+  color: #2F3129;
+  line-height: 20px;
+  font-family: Courier New;
+  font-weight: bold;
+  font-size: 12pt;
+  text-align: center;
+  cursor: pointer;
+}
+
+.coin:hover {
+  background: #61CCE0;
+}
+
+.dogecoin:after {
+  content: 'Đ';
+  display: inline-block;
+  -webkit-transform: rotate(11deg);
+  transform: rotate(11deg);
+}
+
+.dogecoin-sign:after {
+  content: 'Đ';
+}
+
+.bitcoin:after {
+  content: 'Ƀ';
+  display: inline-block;
+  -webkit-transform: rotate(11deg);
+  transform: rotate(11deg);
+}
+
+.bitcoin-sign:after {
+  content: 'Ƀ';
+}
+
+#fundlist .pledger {
+  text-align: center;
+}
+
+#fundlist .pledger .qrcode {
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+#fundlist .pledger p {
+  margin: 5px 0 0 0;
+}
+
+#fundlist .pledger h3 {
+  margin: 19px 0;
+  font-size: 10pt;
+  font-weight: normal;
+}
+
+#fundlist .pledger h3 strong {
+  letter-spacing: -1px;
+  font-size: 17pt;
+  font-weight: normal;
+}
+
+#fundlist .pledger h3 .coin-sign {
+  font-size: 13pt;
+  margin-left: 3px;
+}
+
+#fundlist .pledger input {
+  text-align: center;
+  margin: 0px 0 2px;
+  width: 290px;
+  padding: 8px;
+  color: #eee;
+  border: 1px solid #393939;
+  background: rgba(0,0,0,.2);
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  font-size: 11pt;
+  font-weight: normal;
+}
+
+#fundlist .pledger a {
+  margin: 0px 0;
+}

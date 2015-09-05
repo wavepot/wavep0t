@@ -1,0 +1,19 @@
+{
+  "name": "currency",
+  "repo": "yields/currency",
+  "description": "format a number to currency",
+  "version": "0.0.1",
+  "keywords": [
+    "currency",
+    "format"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ],
+  "development": {
+    "visionmedia/mocha": "*",
+    "component/assert": "*"
+  }
+}

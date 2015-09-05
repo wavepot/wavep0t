@@ -1,0 +1,56 @@
+{
+  "name": "wavepot",
+  "version": "0.0.0",
+  "description": "webaudio digital audio workstation",
+  "keywords": [],
+  "private": true,
+  "author": "stagas",
+  "license": "Commercial",
+  "dependencies": {
+    "component/emitter": "*",
+    "component/debounce": "*",
+    "ForbesLindesay/ajax": "*",
+    "MatthewMueller/qr-code": "*",
+    "segmentio/modal": "*",
+    "btknorr/ejs": "*",
+    "yields/k": "*",
+    "yields/currency": "*",
+    "yields/load-image": "*",
+    "stagas/webaudio-dsp": "*",
+    "stagas/oscilloscope": "*",
+    "stagas/logo-wavepot": "*",
+    "stagas/worker-fork": "*",
+    "stagas/treeview": "*"
+  },
+  "development": {
+    "stagas/watch-js": "*"
+  },
+  "styles": [
+    "icon.css",
+    "style.css",
+    "toolbar.css",
+    "sidebar.css",
+    "modal.css",
+    "about.css",
+    "fund.css"
+  ],
+  "scripts": [
+    "index.js",
+    "utils.js",
+    "sublime.js",
+    "toolbar.js",
+    "sidebar.js",
+    "campaigns.js",
+    "fund.js",
+    "about.js"
+  ],
+  "templates": [
+    "fund.html",
+    "fundlist.html",
+    "about.html"
+  ],
+  "files": [
+    "img/bitcoin_32.png",
+    "img/dogecoin_32.png"
+  ]
+}

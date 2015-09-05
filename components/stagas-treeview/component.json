@@ -1,0 +1,24 @@
+{
+  "name": "treeview",
+  "repo": "stagas/treeview",
+  "description": "minimal async treeview browser",
+  "version": "0.0.1",
+  "keywords": [
+    "treeview",
+    "tree",
+    "nested list"
+  ],
+  "dependencies": {},
+  "development": {
+    "component/emitter": "*",
+    "stagas/watch-js": "*"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "treeview.css"
+  ]
+}

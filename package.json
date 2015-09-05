@@ -1,0 +1,18 @@
+{
+  "name": "wavepot",
+  "version": "0.0.0",
+  "description": "webaudio digital audio workstation",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^3.6.0",
+    "component-minify": "~1.1.1"
+  }
+}

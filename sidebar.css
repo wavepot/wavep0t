@@ -1,0 +1,58 @@
+
+/* sidebar */
+
+#sidebar {
+  position: absolute;
+  overflow: auto;
+  float: left;
+  right: 0;
+  top: 51px;
+  bottom: 0;
+  width: 226px;
+  border-left: 1px solid #202020;
+  color: #676453;
+  background: #272822;
+  font-size: 11pt;
+  font-family: 'Spinnaker';
+}
+
+#sidebar > ul.treeview {
+  border: none;
+  padding-left: 20px;
+}
+
+ul.treeview li.selected {
+  color: #D8D8D2;
+}
+
+ul.treeview li.selected:before {
+  margin-top: .01em;
+  padding-bottom: .03em;
+  background: #49483E;
+}
+
+ul.treeview li .label {
+  padding-bottom: .02em;
+}
+
+ul.treeview li.branch > .label:before {
+  left: -11px;
+  top: -.22em;
+  font-size: 1.86em;
+}
+
+ul.treeview li.branch.open > .label:before {
+  top: -.16em;
+}
+
+@-moz-document url-prefix() {
+  ul.treeview li.branch > .label:before {
+    left: -15px;
+    top: -.14em;
+    font-size: 1.7em;
+  }
+
+  ul.treeview li.branch.open > .label:before {
+    top: -.11em;
+  }
+}

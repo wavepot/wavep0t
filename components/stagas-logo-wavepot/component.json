@@ -1,0 +1,12 @@
+{
+  "name": "logo-wavepot",
+  "main": "index-v1.js",
+  "scripts": [
+    "index-v1.js",
+    "index-v2.js"
+  ],
+  "development": {
+    "stagas/watch-js": "*"
+  },
+  "repo": "http://localhost:6060/stagas/logo-wavepot"
+}

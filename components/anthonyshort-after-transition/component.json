@@ -1,0 +1,17 @@
+{
+  "name": "after-transition",
+  "repo": "anthonyshort/after-transition",
+  "description": "Fire a callback after a transition or immediately if the browser does not support transitions",
+  "version": "0.0.4",
+  "keywords": [],
+  "dependencies": {
+    "anthonyshort/has-transitions": "0.3.0",
+    "anthonyshort/css-emitter": "0.1.1"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}

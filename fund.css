@@ -1,0 +1,166 @@
+
+/* fund */
+
+#fund .pledge-toggle-info {
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 7px;
+  color: #777;
+  font-size: 10pt;
+}
+
+#fund .pledgers {
+  display: none;
+}
+
+#fund .pledger {
+  display: inline-block;
+  width: 49%;
+  text-align: center;
+}
+
+#fund .pledge-buttons {
+  position: relative;
+}
+
+#fund .pledge-button {
+  display: inline-block;
+  padding: 18px 30px;
+  border-radius: 5px;
+  background: #A0D92E;
+  cursor: pointer;
+}
+
+#fund .pledge-dogecoin {
+  position: absolute;
+  right: 0;
+  background: #FD971F;
+}
+
+#fund .pledge-progress {
+  margin: -7px 0 17px;
+  overflow: hidden;
+  width: 520px;
+}
+
+#fund .pledge-stats {
+  position: relative;
+  height: 45px;
+}
+
+#fund .pledge-percentage {
+  position: absolute;
+  right: 0;
+  font-size: 22pt;
+  color: #61CCE0;
+}
+
+#fund .pledge-raised {
+  font-size: 10.5pt;
+  position: absolute;
+  color: #777;
+}
+
+#fund .pledge-amount {
+  font-size: 22pt;
+  color: #61CCE0;
+  margin-right: 0px;
+}
+
+#fund .hide {
+  display: none;
+}
+
+#fund .pledge-details {
+  height: 152px;
+}
+
+#fund .pledge-details .qrcode-container {
+  position: relative;
+  float: left;
+  width: 152px;
+  height: 152px;
+  margin-right: 30px;
+}
+
+#fund .pledge-details .qrcode-bitcoin-sign:after {
+  content: '';
+  position: absolute;
+  left: 60px;
+  top: 60px;
+  width: 32px;
+  height: 32px;
+  background: url(img/bitcoin_32.png);
+}
+
+#fund .pledge-details .qrcode-dogecoin-sign:after {
+  content: '';
+  position: absolute;
+  left: 60px;
+  top: 60px;
+  width: 32px;
+  height: 32px;
+  background: url(img/dogecoin_32.png);
+}
+
+#fund .pledge-details p {
+  margin-top: 0px;
+  width: 338px;
+  display: inline-block;
+  text-align: center;
+}
+
+#fund .pledge-details input {
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0px 0 0px;
+  width: 100%;
+  padding: 18px 8px;
+  color: #eee;
+  border: 1px solid #393939;
+  background: rgba(0,0,0,.2);
+  font-family: 'Spinnaker';
+  font-size: 10.5pt;
+  font-weight: normal;
+}
+
+#fund .pledge-details .pledge-direct {
+  display: inline-block;
+  margin: 21px 0 1px;
+  padding: 13px 30px;
+  border: none;
+  border-radius: 4px;
+  background: #A0D92E;
+  color: #111;
+  font-size: 12pt;
+}
+
+#fund .pledge-details .pledge-alter {
+  display: block;
+  font-size: 10.5pt;
+  color: #777;
+}
+
+input.pledge-direct {
+  display: inline-block !important;
+  width: auto !important;
+  cursor: pointer;
+}
+
+.pledge-details-paypal p {
+  text-align: center !important;
+  width: 100% !important;
+  height: 100%;
+}
+
+.pledge-alter {
+  display: inline-block !important;
+}
+
+/*
+ * blue: #61CCE0
+ * green: #A0D92E
+ * purple: #AB7FFB
+ * orange: #FD971F
+ */

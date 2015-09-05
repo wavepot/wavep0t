@@ -1,0 +1,16 @@
+{
+  "name": "oscilloscope",
+  "version": "0.0.1",
+  "description": "svg based oscilloscope",
+  "keywords": [],
+  "author": "stagas",
+  "license": "MIT",
+  "dependencies": {
+    "component/raf": "*"
+  },
+  "development": {},
+  "scripts": [
+    "index.js"
+  ],
+  "repo": "http://localhost:6060/stagas/oscilloscope"
+}
