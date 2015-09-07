@@ -5,7 +5,7 @@
   "keywords": [],
   "private": true,
   "author": "stagas",
-  "license": "Commercial",
+  "license": "MIT",
   "dependencies": {
     "component/emitter": "*",
     "component/debounce": "*",
