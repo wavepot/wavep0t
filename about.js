@@ -17,12 +17,12 @@ about.active = null;
 function show(){
   if (about.active) return;
 
-  var fund = require('./fund');
-  if (fund.active) {
-    fund.modal.once('hide', about.show.bind(about));
-    fund.modal.hide();
-    return;
-  }
+  // var fund = require('./fund');
+  // if (fund.active) {
+  //   fund.modal.once('hide', about.show.bind(about));
+  //   fund.modal.hide();
+  //   return;
+  // }
 
   about.active = true;
 
@@ -41,11 +41,11 @@ function show(){
   logo.wave.setAttribute('stroke-linecap', 'butt');
   query('.about-logo').appendChild(logo.el);
 
-  query('a.fundraiser').onclick = function(ev){
-    ev.preventDefault();
-    fund.show('milestone I');
-    return false;
-  };
+  // query('a.fundraiser').onclick = function(ev){
+  //   ev.preventDefault();
+  //   fund.show('milestone I');
+  //   return false;
+  // };
 
   about.modal = modal(el)
     .overlay()

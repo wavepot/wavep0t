@@ -2,7 +2,7 @@
 var Oscilloscope = require('oscilloscope');
 var Logo = require('logo-wavepot');
 //var xgui = require('xgui');
-var fund = require('./fund');
+// var fund = require('./fund');
 var about = require('./about');
 var utils = require('./utils');
 var createElement = utils.createElement;
@@ -27,7 +27,7 @@ function createToolbar(ctx){
   toolbar.play = createElement('play', 'button icon-play');
   toolbar.pause = createElement('pause', 'button icon-pause hide');
   toolbar.stop = createElement('stop', 'button icon-stop');
-  toolbar.record = createElement('record', 'button icon-record');
+  // toolbar.record = createElement('record', 'button icon-record');
   toolbar.save = createElement('save', 'button icon-save right');
   toolbar.share = createElement('share', 'button icon-share right');
   toolbar.export = createElement('export', 'button icon-export right');
@@ -104,7 +104,7 @@ function createToolbar(ctx){
   toolbar.el.appendChild(toolbar.play);
   toolbar.el.appendChild(toolbar.pause);
   toolbar.el.appendChild(toolbar.stop);
-  toolbar.el.appendChild(toolbar.record);
+  // toolbar.el.appendChild(toolbar.record);
   toolbar.el.appendChild(toolbar.menu);
   toolbar.el.appendChild(toolbar.oscilloscope.el);
   /*
@@ -126,8 +126,8 @@ function createToolbar(ctx){
     toolbar.pause.classList.add('hide');
   };
 
-  toolbar.record.onclick = fund.show.bind(fund, 'milestone I');
-  toolbar.menu.onclick = fund.show.bind(fund, 'milestone I');
+  // toolbar.record.onclick = about.show.bind(about); //fund.show.bind(fund, 'milestone I');
+  toolbar.menu.onclick = about.show.bind(about); //fund.show.bind(fund, 'milestone I');
   /*toolbar.smiley.onclick =
   toolbar.record.onclick =
   toolbar.save.onclick = fundlist.show;*/

@@ -26,9 +26,6 @@ function master(){
     }
   });
 
-  preload('/wavepot/img/bitcoin_32.png', function(){});
-  preload('/wavepot/img/dogecoin_32.png', function(){});
-
   var bufferMax = 6;
   var bufferQueue = [];
 
@@ -51,7 +48,7 @@ function master(){
   var Sublime = require('./sublime');
   var toolbar = require('./toolbar');
   var sidebar = require('./sidebar');
-  var fund = require('./fund');
+  // var fund = require('./fund');
 
   var dsp = require('webaudio-dsp');
   var ctx = dsp(bufferSize, process);

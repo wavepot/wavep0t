@@ -1,10 +1,9 @@
 
 var ajax = require('ajax');
 //var modules = require('./dsp-modules');
-var campaigns = require('./campaigns');
+var about = require('./about');
 var emitter = require('emitter');
 var utils = require('./utils');
-var fund = require('./fund');
 var tree = require('treeview');
 var createElement = utils.createElement;
 
@@ -64,53 +63,76 @@ function createSidebar(context){
         break;
 
       default:
-        fund.show('milestone I');
+        about.show()
+        // fund.show('milestone I');
         break;
     }
   });
 
   var nodes = [
-    ['modules', true],
+    // ['modules', true],
     ['projects', true]
   ];
 
   var contents = {
-    '/modules': [
-      ['effects', true],
-      ['oscillators', true],
-      ['sequencers', true],
-      ['synths', true],
-      ['various', true]
-    ],
-    //'/projects': Object.keys(library).map(function(name){ return [name.split('/').pop()]; }),
-    '/modules/effects': [
-      ['amp', true],
-      ['chorus', true],
-      ['delay', true],
-      ['dynamics', true],
-      ['eq', true],
-      ['filter', true],
-      ['flanger', true],
-      ['modulation', true],
-      ['phaser', true],
-      ['reverb', true]
-    ],
-    '/modules/synths': [
-      ['ambient', true],
-      ['analog', true],
-      ['bass', true],
-      ['drums', true],
-      ['flute', true],
-      ['fm', true],
-      ['fx', true],
-      ['modular', true],
-      ['organ', true],
-      ['pads', true],
-      ['percussion', true],
-      ['piano', true],
-      ['sample', true],
-      ['strings', true]
+    '/projects': [
+      ['afternoon walk'],
+      ['dubstep dawn'],
+      ['early morning'],
+      ['go to sleep'],
+      ['got some 303'],
+      ['icecream'],
+      ['late morning'],
+      ['mind swift'],
+      ['mind swift seutje mix'],
+      ['morning'],
+      ['need more 303'],
+      ['on the verge'],
+      ['on the verge tech mix'],
+      ['polytropon'],
+      ['polytropon astral mix'],
+      ['rooftop unvisited'],
+      ['simple sine'],
+      ['subwah'],
+      ['unexpected token'],
+      ['yay'],
     ]
+    // '/modules': [
+    //   ['effects', true],
+    //   ['oscillators', true],
+    //   ['sequencers', true],
+    //   ['synths', true],
+    //   ['various', true]
+    // ],
+    // //'/projects': Object.keys(library).map(function(name){ return [name.split('/').pop()]; }),
+    // '/modules/effects': [
+    //   ['amp', true],
+    //   ['chorus', true],
+    //   ['delay', true],
+    //   ['dynamics', true],
+    //   ['eq', true],
+    //   ['filter', true],
+    //   ['flanger', true],
+    //   ['modulation', true],
+    //   ['phaser', true],
+    //   ['reverb', true]
+    // ],
+    // '/modules/synths': [
+    //   ['ambient', true],
+    //   ['analog', true],
+    //   ['bass', true],
+    //   ['drums', true],
+    //   ['flute', true],
+    //   ['fm', true],
+    //   ['fx', true],
+    //   ['modular', true],
+    //   ['organ', true],
+    //   ['pads', true],
+    //   ['percussion', true],
+    //   ['piano', true],
+    //   ['sample', true],
+    //   ['strings', true]
+    // ]
   };
 
   function fetch(node, fn){
@@ -124,8 +146,9 @@ function createSidebar(context){
           load(path, fn);
           break;
         default:
-          fund.show('milestone I');
-          fund.modal.once('hiding', fn.bind(this, new Error('no results')));
+          about.show()
+          // fund.show('milestone I');
+          // fund.modal.once('hiding', fn.bind(this, new Error('no results')));
           break;
       }
     } else {
@@ -143,7 +166,7 @@ function createSidebar(context){
   }
 
   setTimeout(function(){
-    tree(sidebar, nodes, fetch)[1].click(function(err, nodes){
+    tree(sidebar, nodes, fetch)[0].click(function(err, nodes){
       var path = document.location.pathname;
 
       if ('/' == path) {
@@ -164,7 +187,7 @@ function createSidebar(context){
 
     var session = sublime.editor.getSession();
 
-    path = 'https://cdn.rawgit.com' + path;
+    path = 'https://gitcdn.xyz/cdn' + path;
 
     if (!~path.indexOf('/raw/')) path += '/raw/';
 

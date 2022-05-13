@@ -12,7 +12,7 @@ var tmpl = {
 
 var fund = module.exports = {};
 
-fund.campaigns = require('./campaigns');
+// fund.campaigns = require('./campaigns');
 fund.show = show;
 fund.active = null;
 
@@ -45,9 +45,9 @@ function show(name){
 
   el.innerHTML = ejs.render(tmpl.fund, { c: campaign });
 
-  var progress = el.querySelector('.pledge-progress');
-  var svg = createWave(campaign.percentage);
-  progress.appendChild(svg);
+  // var progress = el.querySelector('.pledge-progress');
+  // var svg = createWave(campaign.percentage);
+  // progress.appendChild(svg);
 
   /*var buttons = el.querySelector('.pledge-buttons');
   buttons.querySelector('.pledge-bitcoin').onclick = onpledge;
@@ -57,29 +57,29 @@ function show(name){
     [].slice.call(nodes).forEach(fn);
   }
 
-  each(queryAll('.pledge-alter-bitcoin'), function(node){
-    node.onclick = alter('bitcoin');
-  });
-  each(queryAll('.pledge-alter-dogecoin'), function(node){
-    node.onclick = alter('dogecoin');
-  });
-  each(queryAll('.pledge-alter-paypal'), function(node){
-    node.onclick = alter('paypal');
-  });
+  // each(queryAll('.pledge-alter-bitcoin'), function(node){
+  //   node.onclick = alter('bitcoin');
+  // });
+  // each(queryAll('.pledge-alter-dogecoin'), function(node){
+  //   node.onclick = alter('dogecoin');
+  // });
+  // each(queryAll('.pledge-alter-paypal'), function(node){
+  //   node.onclick = alter('paypal');
+  // });
 
-  var details = query('.pledge-details');
+  // var details = query('.pledge-details');
 
-  query('.pledge-show-info').onclick = function(){
-    query('.fund-info').classList.remove('hide');
-    query('.fund-campaign').classList.add('hide');
-    return false;
-  };
+  // query('.pledge-show-info').onclick = function(){
+  //   query('.fund-info').classList.remove('hide');
+  //   query('.fund-campaign').classList.add('hide');
+  //   return false;
+  // };
 
-  query('.pledge-hide-info').onclick = function(){
-    query('.fund-info').classList.add('hide');
-    query('.fund-campaign').classList.remove('hide');
-    return false;
-  };
+  // query('.pledge-hide-info').onclick = function(){
+  //   query('.fund-info').classList.add('hide');
+  //   query('.fund-campaign').classList.remove('hide');
+  //   return false;
+  // };
 
   fund.modal = modal(el)
     .overlay()
@@ -90,17 +90,17 @@ function show(name){
       fund.active = null;
     });
 
-  function alter(target){
-    var targets = ['bitcoin', 'dogecoin', 'paypal'];
+  // function alter(target){
+  //   var targets = ['bitcoin', 'dogecoin', 'paypal'];
 
-    return function onclick(){
-      targets.forEach(function(t){
-        if (target === t) query('.pledge-details-' + t).classList.remove('hide');
-        else query('.pledge-details-' + t).classList.add('hide');
-      })
-      return false;
-    };
-  }
+  //   return function onclick(){
+  //     targets.forEach(function(t){
+  //       if (target === t) query('.pledge-details-' + t).classList.remove('hide');
+  //       else query('.pledge-details-' + t).classList.add('hide');
+  //     })
+  //     return false;
+  //   };
+  // }
 
   function query(sel){
     return el.querySelector(sel);
