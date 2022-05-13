@@ -7,9 +7,11 @@ var emitter = require('emitter');
 var process = require('audio-process');
 
 exports = module.exports = function(bufferSize, fn){
-  var audio = typeof webkitAudioContext !== 'undefined'
-    ? new webkitAudioContext
-    : new AudioContext();
+  var audio = new AudioContext({ sampleRate: 44100, latencyHint: 'playback' });
+
+  document.body.onmousedown = () => {
+    audio.resume()
+  }
 
   var sampleRate = audio.sampleRate;
 

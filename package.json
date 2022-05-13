@@ -12,7 +12,9 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^3.6.0",
-    "component-minify": "~1.1.1"
+    "component": "^0.19.9",
+    "component-build": "^1.2.2",
+    "component-minify": "~1.1.1",
+    "express": "^3.6.0"
   }
 }

@@ -31,8 +31,7 @@
     "toolbar.css",
     "sidebar.css",
     "modal.css",
-    "about.css",
-    "fund.css"
+    "about.css"
   ],
   "scripts": [
     "index.js",
@@ -40,17 +39,9 @@
     "sublime.js",
     "toolbar.js",
     "sidebar.js",
-    "campaigns.js",
-    "fund.js",
     "about.js"
   ],
   "templates": [
-    "fund.html",
-    "fundlist.html",
     "about.html"
-  ],
-  "files": [
-    "img/bitcoin_32.png",
-    "img/dogecoin_32.png"
   ]
 }
