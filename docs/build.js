@@ -5524,7 +5524,7 @@ function master(){\n\
   var ctx = dsp(bufferSize, process);\n\
   var sampleRate = ctx.audio.sampleRate;\n\
 \n\
-  var child = fork('/build.js', 'wavepot');\n\
+  var child = fork('build.js', 'wavepot');\n\
 \n\
   toolbar.create(ctx);\n\
   document.body.appendChild(toolbar.el);\n\
@@ -6023,34 +6023,23 @@ function createSidebar(context){\n\
 \n\
   sidebar.on('select', function(node){\n\
     var path = node.path();\n\
-    var dir = path.split('/')[1];\n\
 \n\
-    switch (dir) {\n\
-      case 'projects':\n\
-        var sublime = context.sublime;\n\
-        if (!sublime) return;\n\
+    var sublime = context.sublime;\n\
+    if (!sublime) return;\n\
 \n\
-        if (context.hasEdited) {\n\
-          if (!confirm('You\\'ve made some edits!\\n\
+    if (context.hasEdited) {\n\
+      if (!confirm('You\\'ve made some edits!\\n\
 \\n\
 Are you sure you want to load a new project and lose everything?')) return;\n\
-        }\n\
-\n\
-        context.isNewProject = true;\n\
-\n\
-        var session = sublime.editor.getSession();\n\
-\n\
-        ajax.get(path, function(code){\n\
-          session.setValue(code);\n\
-        });\n\
-\n\
-        break;\n\
-\n\
-      default:\n\
-        about.show()\n\
-        // fund.show('milestone I');\n\
-        break;\n\
     }\n\
+\n\
+    context.isNewProject = true;\n\
+\n\
+    var session = sublime.editor.getSession();\n\
+\n\
+    ajax.get('.' + path, function(code){\n\
+      session.setValue(code);\n\
+    });\n\
   });\n\
 \n\
   var nodes = [\n\
@@ -6153,19 +6142,17 @@ Are you sure you want to load a new project and lose everything?')) return;\n\
     tree(sidebar, nodes, fetch)[0].click(function(err, nodes){\n\
       var path = document.location.pathname;\n\
 \n\
-      if ('/' == path) {\n\
+      if (!loadRawGit(path)) {\n\
         nodes.forEach(function(node){\n\
           if (~node.path().indexOf('simple sine')) node.click();\n\
         });\n\
-      } else {\n\
-        loadRawGit(path);\n\
       }\n\
     });\n\
   }, 0);\n\
 \n\
   function loadRawGit(path){\n\
     var sublime = context.sublime;\n\
-    if (!sublime) return;\n\
+    if (!sublime) return false;\n\
 \n\
     context.isNewProject = true;\n\
 \n\
@@ -6173,7 +6160,7 @@ Are you sure you want to load a new project and lose everything?')) return;\n\
 \n\
     path = 'https://gitcdn.xyz/cdn' + path;\n\
 \n\
-    if (!~path.indexOf('/raw/')) path += '/raw/';\n\
+    if (!~path.indexOf('/raw/')) return false //path += '/raw/';\n\
 \n\
     ajax({\n\
       url: path,\n\
@@ -6184,6 +6171,8 @@ Are you sure you want to load a new project and lose everything?')) return;\n\
     function success(code){\n\
       session.setValue(code);\n\
     }\n\
+\n\
+    return true\n\
   }\n\
 /*\n\
   sidebar.header = createElement('header');\n\

@@ -41,32 +41,21 @@ function createSidebar(context){
 
   sidebar.on('select', function(node){
     var path = node.path();
-    var dir = path.split('/')[1];
 
-    switch (dir) {
-      case 'projects':
-        var sublime = context.sublime;
-        if (!sublime) return;
+    var sublime = context.sublime;
+    if (!sublime) return;
 
-        if (context.hasEdited) {
-          if (!confirm('You\'ve made some edits!\n\nAre you sure you want to load a new project and lose everything?')) return;
-        }
-
-        context.isNewProject = true;
-
-        var session = sublime.editor.getSession();
-
-        ajax.get(path, function(code){
-          session.setValue(code);
-        });
-
-        break;
-
-      default:
-        about.show()
-        // fund.show('milestone I');
-        break;
+    if (context.hasEdited) {
+      if (!confirm('You\'ve made some edits!\n\nAre you sure you want to load a new project and lose everything?')) return;
     }
+
+    context.isNewProject = true;
+
+    var session = sublime.editor.getSession();
+
+    ajax.get('.' + path, function(code){
+      session.setValue(code);
+    });
   });
 
   var nodes = [
@@ -169,19 +158,17 @@ function createSidebar(context){
     tree(sidebar, nodes, fetch)[0].click(function(err, nodes){
       var path = document.location.pathname;
 
-      if ('/' == path) {
+      if (!loadRawGit(path)) {
         nodes.forEach(function(node){
           if (~node.path().indexOf('simple sine')) node.click();
         });
-      } else {
-        loadRawGit(path);
       }
     });
   }, 0);
 
   function loadRawGit(path){
     var sublime = context.sublime;
-    if (!sublime) return;
+    if (!sublime) return false;
 
     context.isNewProject = true;
 
@@ -189,7 +176,7 @@ function createSidebar(context){
 
     path = 'https://gitcdn.xyz/cdn' + path;
 
-    if (!~path.indexOf('/raw/')) path += '/raw/';
+    if (!~path.indexOf('/raw/')) return false //path += '/raw/';
 
     ajax({
       url: path,
@@ -200,6 +187,8 @@ function createSidebar(context){
     function success(code){
       session.setValue(code);
     }
+
+    return true
   }
 /*
   sidebar.header = createElement('header');

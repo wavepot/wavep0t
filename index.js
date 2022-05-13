@@ -54,7 +54,7 @@ function master(){
   var ctx = dsp(bufferSize, process);
   var sampleRate = ctx.audio.sampleRate;
 
-  var child = fork('/build.js', 'wavepot');
+  var child = fork('build.js', 'wavepot');
 
   toolbar.create(ctx);
   document.body.appendChild(toolbar.el);
