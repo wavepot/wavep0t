@@ -158,7 +158,7 @@ function createSidebar(context){
     tree(sidebar, nodes, fetch)[0].click(function(err, nodes){
       var path = document.location.pathname;
 
-      if (!loadRawGit(path)) {
+      if (!loadRawGit(document.location.search)) {
         nodes.forEach(function(node){
           if (~node.path().indexOf('simple sine')) node.click();
         });
@@ -166,9 +166,11 @@ function createSidebar(context){
     });
   }, 0);
 
-  function loadRawGit(path){
+  function loadRawGit(search){
     var sublime = context.sublime;
     if (!sublime) return false;
+
+    let path = search.slice(1).split('.com').pop()
 
     context.isNewProject = true;
 

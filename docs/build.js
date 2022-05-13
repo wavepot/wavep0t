@@ -6142,7 +6142,7 @@ Are you sure you want to load a new project and lose everything?')) return;\n\
     tree(sidebar, nodes, fetch)[0].click(function(err, nodes){\n\
       var path = document.location.pathname;\n\
 \n\
-      if (!loadRawGit(path)) {\n\
+      if (!loadRawGit(document.location.search)) {\n\
         nodes.forEach(function(node){\n\
           if (~node.path().indexOf('simple sine')) node.click();\n\
         });\n\
@@ -6150,9 +6150,11 @@ Are you sure you want to load a new project and lose everything?')) return;\n\
     });\n\
   }, 0);\n\
 \n\
-  function loadRawGit(path){\n\
+  function loadRawGit(search){\n\
     var sublime = context.sublime;\n\
     if (!sublime) return false;\n\
+\n\
+    let path = search.slice(1).split('.com').pop()\n\
 \n\
     context.isNewProject = true;\n\
 \n\
