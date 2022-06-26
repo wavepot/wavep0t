@@ -5956,13 +5956,10 @@ function createSidebar(context) {
       if (!confirm('You\'ve made some edits!\n\nAre you sure you want to load a new project and lose everything?')) return;
     }
 
-<<<<<<< Updated upstream
     context.isNewProject = true;
-=======
-        ajax.get(path, function (code) {
-          session.setValue(code);
-        });
->>>>>>> Stashed changes
+    ajax.get(path, function (code) {
+      session.setValue(code);
+    });
 
     var session = sublime.editor.getSession();
 
