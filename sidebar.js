@@ -36,10 +36,10 @@ var sidebar = module.exports = emitter({});
 
 sidebar.create = createSidebar;
 
-function createSidebar(context){
+function createSidebar(context) {
   sidebar.el = createElement('sidebar');
 
-  sidebar.on('select', function(node){
+  sidebar.on('select', function (node) {
     var path = node.path();
 
     var sublime = context.sublime;
@@ -49,11 +49,17 @@ function createSidebar(context){
       if (!confirm('You\'ve made some edits!\n\nAre you sure you want to load a new project and lose everything?')) return;
     }
 
+<<<<<<< Updated upstream
     context.isNewProject = true;
+=======
+        ajax.get(path, function (code) {
+          session.setValue(code);
+        });
+>>>>>>> Stashed changes
 
     var session = sublime.editor.getSession();
 
-    ajax.get('.' + path, function(code){
+    ajax.get('.' + path, function (code) {
       session.setValue(code);
     });
   });
@@ -124,7 +130,7 @@ function createSidebar(context){
     // ]
   };
 
-  function fetch(node, fn){
+  function fetch(node, fn) {
     var path = node.path();
     var parts = path.split('/');
     var dir = parts[1];
@@ -145,40 +151,51 @@ function createSidebar(context){
     }
   }
 
-  function load(path, fn){
-    ajax.getJSON(path, function(res){
-      res = res.map(function(name){
+  function load(path, fn) {
+    ajax.getJSON(path, function (res) {
+      res = res.map(function (name) {
         return [name];
       });
       fn(null, res);
     });
   }
 
-  setTimeout(function(){
-    tree(sidebar, nodes, fetch)[0].click(function(err, nodes){
-      var path = document.location.pathname;
+  setTimeout(function () {
+    tree(sidebar, nodes, fetch)[0].click(function (err, nodes) {
+      if (document.location.search) {
+        loadRawGit(document.location.search.slice(1))
+      } else {
+        var path = document.location.pathname;
 
-      if (!loadRawGit(document.location.search)) {
-        nodes.forEach(function(node){
-          if (~node.path().indexOf('simple sine')) node.click();
-        });
+        if ('/' == path) {
+          nodes.forEach(function (node) {
+            if (~node.path().indexOf('simple sine')) node.click();
+          });
+        }
       }
     });
   }, 0);
 
-  function loadRawGit(search){
+  function loadRawGit(path) {
     var sublime = context.sublime;
     if (!sublime) return false;
-
-    let path = search.slice(1).split('.com').pop()
 
     context.isNewProject = true;
 
     var session = sublime.editor.getSession();
 
-    path = 'https://gitcdn.xyz/cdn' + path;
+    if (path.includes('gist.githubusercontent.com')) {
+      path = path.split('gist.githubusercontent.com/').pop()
+      path = 'repo/' + path
+    } else {
+      if (path.includes('.com')) path = path.split('.com').pop()
+      path = 'cdn/' + path
+    }
 
-    if (!~path.indexOf('/raw/')) return false //path += '/raw/';
+    path = 'https://gitcdn.xyz/' + path;
+
+    console.log('fetch ajax cdn', path)
+    // if (!~path.indexOf('/raw/')) path += '/raw/';
 
     ajax({
       url: path,
@@ -186,29 +203,29 @@ function createSidebar(context){
       success: success
     });
 
-    function success(code){
+    function success(code) {
       session.setValue(code);
     }
 
     return true
   }
-/*
-  sidebar.header = createElement('header');
-  sidebar.header.innerHTML = '<ul><li>modules<li>projects<li>samples<li>visuals</ul>';
+  /*
+    sidebar.header = createElement('header');
+    sidebar.header.innerHTML = '<ul><li>modules<li>projects<li>samples<li>visuals</ul>';
 
-  sidebar.list = document.createElement('ul');
-  sidebar.list.className = 'browser';
+    sidebar.list = document.createElement('ul');
+    sidebar.list.className = 'browser';
 
-  var keys = Object.keys(modules);
-  keys.unshift('+ create');
-  keys.forEach(function(key){
-    var item;
-    item = document.createElement('li');
-    item.innerHTML = key;
-    sidebar.list.appendChild(item);
-  });
+    var keys = Object.keys(modules);
+    keys.unshift('+ create');
+    keys.forEach(function(key){
+      var item;
+      item = document.createElement('li');
+      item.innerHTML = key;
+      sidebar.list.appendChild(item);
+    });
 
-  sidebar.el.appendChild(sidebar.header);
-  sidebar.el.appendChild(sidebar.list);
-*/
+    sidebar.el.appendChild(sidebar.header);
+    sidebar.el.appendChild(sidebar.list);
+  */
 }
